@@ -1,0 +1,14 @@
+# Ignore everything
+*
+
+# But not these files...
+!.gitignore
+!kitty/*
+!tmux/*
+!fish/*
+# etc...
+
+# Don't ignore subdirectories
+!*/*/*/
+!*/*/
+!*/
