@@ -20,6 +20,7 @@ export PROTON_HIDE_NVIDIA_GPU=0
 export RIPGREP_CONFIG_PATH=$HOME/.config/nvim/.ripgreprc
 
 bind -M insert \cl accept-autosuggestion
+bind -M insert \el accept-autosuggestion
 
 set -g theme_nerd_fonts yes
 
