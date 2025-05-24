@@ -1,46 +1,58 @@
+# ########### #
+# Overwriting
+# ########### #
 alias  ls 'eza --icons --color=always'
 abbr -a cat 'bat'
 
 abbr -a vim 'vim -S ~/.config/nvim/init.vim'
 abbr -a rm 'rm -i'
 
-abbr -a shut 'shutdown now'
-
 abbr -a less 'less -r'
 
-# abbr -a mcd 'source mkcd.sh'
+abbr -a shut 'shutdown now'
 
-abbr -a srm 'sudo rm -i'
+# ########## #
+# Shorthands #
+# ########## #
+
+# Broken script
+# abbr -a mcd 'source mkcd.sh'
 
 abbr -a cl 'clear'
 
-abbr -a pac 'pacman'
 abbr -a in 'paru -Syu'
+abbr -a un 'paru -Rns'
 abbr -a uin 'apt install'
 abbr -a up 'paru && flatpak update'
-abbr -a uup 'sudo apt update && sudo apt upgrade && flatpak update'
-abbr -a mup 'sudo brew update'
+# abbr -a up 'paru && flatpak update && sudo npm update -g'
+abbr -a uup 'sudo apt update && sudo apt upgrade && flatpak update && snap update && sudo npm update -g'
+abbr -a mup 'sudo brew update && npm update -g && pip update && sudo npm update -g'
 
+# update all pip packages on a system.
+abbr -a upip 'pip list --outdated --format=freeze | awk -F \'==\' \'{print $1}\' | xargs -n1 pip install -U'
+abbr -a upipx 'pipx list --outdated --format=freeze | awk -F \'==\' \'{print $1}\' | xargs -n1 pipx install -U'
 
+abbr -a provides 'pacman -Qo'
+
+abbr -a pac 'pacman'
 abbr -a spac 'sudo pacman -Syu'
 abbr -a spar 'sudo pacman -Rs'
 
 abbr -a ipa 'ip route get 1.1.1.1 | awk \'{ print $7 }\''
 
-abbr -a n 'nvim'
-abbr -a nn 'nvim ~/notes/'
-abbr -a nnl 'nvim ~/notes/languageLearning/'
-abbr -a nc 'nvim ~/.config/'
-abbr -a ncn 'nvim ~/.config/nvim/'
-abbr -a ncf 'nvim ~/.config/fish'
-abbr -a nfish 'nvim ~/.config/fish'
+abbr --set-cursor -a n 'nvim'
+abbr --set-cursor -a nn 'nvim ~/notes/%'
+abbr --set-cursor -a nnl 'nvim ~/notes/languageLearning/%'
+abbr --set-cursor -a nc 'nvim ~/.config/%'
+abbr --set-cursor -a ncn 'nvim ~/.config/nvim/%'
+abbr --set-cursor -a ncf 'nvim ~/.config/fish%'
 abbr -a nvhosts 'nvim /etc/httpd/conf/extra/httpd-vhosts.conf'
-abbr -a nservc 'nvim /etc/httpd/conf/'
-abbr -a nservc 'nvim /etc/httpd/conf/'
+abbr --set-cursor -a nservc  'nvim /etc/httpd/conf/%'
+abbr --set-cursor -a ns 'nvim ~/scripts/%'
 
-abbr -a vim ' vim -S ~/.config/nvim/init.vim'
 
-abbr -a cdserv 'cd /srv/http/'
+
+abbr --set-cursor -a cdserv 'cd /srv/http/%'
 
 abbr -a nr 'npm run'
 abbr -a nrs 'npm run start'
